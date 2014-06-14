@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTarget="Version" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask AssemblyFile="..\.build\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.AssemblyInfo" />
+  
+  <PropertyGroup>
+    <Version>$(ASSEMBLYVERSION)</Version>
+    <FileVersion>$(ASSEMBLYFILEVERSION)</FileVersion>
+    <InformationalVersion>$(ASSEMBLYINFORMATIONALVERSION)</InformationalVersion>
+    <Company>Zirpl Software, LLC</Company>
+    <Copyright>Copyright © Zirpl Software 2013</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CommonFiles Include="..\**\AssemblyInfo_common.cs" Exclude="..\**\.svn\**;..\Build\AssemblyInfo_common.cs" />
+    <CommonPortableFiles Include="..\**\AssemblyInfo_common_portable.cs" Exclude="..\**\.svn\**;..\Build\AssemblyInfo_common_portable.cs" />
+  </ItemGroup>
+  
+  <Target Name="Version">
+    <Error Condition="'$(Version)' == ''" Text="Must supply ASSEMBLYVERSION" />
+    <Error Condition="'$(FileVersion)' == ''" Text="Must supply ASSEMBLYFILEVERSION" />
+    <Error Condition="'$(InformationalVersion)' == ''" Text="Must supply ASSEMBLYINFORMATIONALVERSION" />
+
+    <CallTarget Targets="VersionRegularAssemblies" />
+    <CallTarget Targets="VersionPortableAssemblies" />
+    
+  </Target>
+
+  <Target Name="VersionRegularAssemblies">
+    <AssemblyInfo CodeLanguage="CS"
+                  OutputFile="%(CommonFiles.FullPath)"
+                  AssemblyVersion="$(Version)"
+                  AssemblyFileVersion="$(FileVersion)"
+                  AssemblyInformationalVersion="$(InformationalVersion)"
+                  AssemblyCompany="$(Company)"
+                  AssemblyCopyright="$(Copyright)"
+                  ComVisible="false"
+                  CLSCompliant="true" />
+  </Target>
+ 
+  <Target Name="VersionPortableAssemblies">
+    <AssemblyInfo CodeLanguage="CS"
+                  OutputFile="%(CommonPortableFiles.FullPath)"
+                  AssemblyVersion="$(Version)"
+                  AssemblyFileVersion="$(FileVersion)"
+                  AssemblyInformationalVersion="$(InformationalVersion)"
+                  AssemblyCompany="$(Company)"
+                  AssemblyCopyright="$(Copyright)" />
+  </Target>
+</Project>
