@@ -16,25 +16,6 @@ namespace Zirpl.CalcEngine
             ce.RegisterFunction("TRUE", 0, True);
             ce.RegisterFunction("FALSE", 0, False);
         }
-#if DEBUG
-        public static void Test(CalculationEngine ce)
-        {
-            ce.Test("AND(true, true)", true);
-            ce.Test("AND(true, false)", false);
-            ce.Test("AND(false, true)", false);
-            ce.Test("AND(false, false)", false);
-            ce.Test("OR(true, true)", true);
-            ce.Test("OR(true, false)", true);
-            ce.Test("OR(false, true)", true);
-            ce.Test("OR(false, false)", false);
-            ce.Test("NOT(false)", true);
-            ce.Test("NOT(true)", false);
-            ce.Test("IF(5 > 4, true, false)", true);
-            ce.Test("IF(5 > 14, true, false)", false);
-            ce.Test("TRUE()", true);
-            ce.Test("FALSE()", false);
-        }
-#endif
         static object And(List<Expression> p)
         {
             var b = true;

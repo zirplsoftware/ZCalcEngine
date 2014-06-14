@@ -70,56 +70,6 @@ namespace Zirpl.CalcEngine
             ce.RegisterFunction("TANH", 1, Tanh);
             ce.RegisterFunction("TRUNC", 1, Trunc);
         }
-#if DEBUG
-        public static void Test(CalculationEngine ce)
-        {
-            ce.Test("ABS(-12)", 12.0);
-            ce.Test("ABS(+12)", 12.0);
-            ce.Test("ACOS(.23)", Math.Acos(.23));
-            ce.Test("ASIN(.23)", Math.Asin(.23));
-            ce.Test("ATAN(.23)", Math.Atan(.23));
-            ce.Test("ATAN2(1,2)", Math.Atan2(1, 2));
-            ce.Test("CEILING(1.8)", Math.Ceiling(1.8));
-            ce.Test("COS(1.23)", Math.Cos(1.23));
-            ce.Test("COSH(1.23)", Math.Cosh(1.23));
-            ce.Test("EXP(1)", Math.Exp(1));
-            ce.Test("FLOOR(1.8)", Math.Floor(1.8));
-            ce.Test("INT(1.8)", 1);
-            ce.Test("LOG(1.8)", Math.Log(1.8, 10)); // default base is 10
-            ce.Test("LOG(1.8, 4)", Math.Log(1.8, 4)); // custom base
-            ce.Test("LN(1.8)", Math.Log(1.8)); // real log
-            ce.Test("LOG10(1.8)", Math.Log10(1.8)); // same as Log(1.8)
-            ce.Test("PI()", Math.PI);
-            ce.Test("POWER(2,4)", Math.Pow(2, 4));
-            //ce.Test("RAND") <= 1.0);
-            //ce.Test("RANDBETWEEN(4,5)") <= 5);
-            ce.Test("SIGN(-5)", -1);
-            ce.Test("SIGN(+5)", +1);
-            ce.Test("SIGN(0)", 0);
-            ce.Test("SIN(1.23)", Math.Sin(1.23));
-            ce.Test("SINH(1.23)", Math.Sinh(1.23));
-            ce.Test("SQRT(144)", Math.Sqrt(144));
-            ce.Test("SUM(1, 2, 3, 4)", 1 + 2 + 3 + 4.0);
-            ce.Test("TAN(1.23)", Math.Tan(1.23));
-            ce.Test("TANH(1.23)", Math.Tanh(1.23));
-            ce.Test("TRUNC(1.23)", 1.0);
-            ce.Test("PI()", Math.PI);
-            ce.Test("PI", Math.PI);
-            ce.Test("LN(10)", Math.Log(10));
-            ce.Test("LOG(10)", Math.Log10(10));
-            ce.Test("EXP(10)", Math.Exp(10));
-            ce.Test("SIN(PI()/4)", Math.Sin(Math.PI / 4));
-            ce.Test("ASIN(PI()/4)", Math.Asin(Math.PI / 4));
-            ce.Test("SINH(PI()/4)", Math.Sinh(Math.PI / 4));
-            ce.Test("COS(PI()/4)", Math.Cos(Math.PI / 4));
-            ce.Test("ACOS(PI()/4)", Math.Acos(Math.PI / 4));
-            ce.Test("COSH(PI()/4)", Math.Cosh(Math.PI / 4));
-            ce.Test("TAN(PI()/4)", Math.Tan(Math.PI / 4));
-            ce.Test("ATAN(PI()/4)", Math.Atan(Math.PI / 4));
-            ce.Test("ATAN2(1,2)", Math.Atan2(1, 2));
-            ce.Test("TANH(PI()/4)", Math.Tanh(Math.PI / 4));
-        }
-#endif
         static object Abs(List<Expression> p)
         {
             return Math.Abs((double)p[0]);

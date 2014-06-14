@@ -90,17 +90,6 @@ namespace Zirpl.CalcEngine
             //WEIBULL	Returns the Weibull distribution
             //ZTEST	Returns the one-tailed probability-value of a z-test
         }
-
-#if DEBUG
-        public static void Test(CalculationEngine ce)
-        {
-            ce.Test("Average(1, 3, 3, 1, true, false, \"hello\")", 2.0);
-            ce.Test("AverageA(1, 3, 3, 1, true, false, \"hello\")", (1 + 3 + 3 + 1 + 1 + 0 + 0) / 7.0);
-            ce.Test("Count(1, 3, 3, 1, true, false, \"hello\")", 4.0);
-            ce.Test("CountA(1, 3, 3, 1, true, false, \"hello\")", 7.0);
-        }
-#endif
-
         static object Average(List<Expression> p)
         {
             return GetTally(p, true).Average();

@@ -9,7 +9,7 @@
     <RootNamespace>Zirpl.CalcEngine</RootNamespace>
     <AssemblyName>Zirpl.CalcEngine.Portable</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile328</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -51,9 +51,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculationEngine.cs" />
-    <Compile Include="Expression.cs" />
-    <Compile Include="ExpressionCache.cs" />
-    <Compile Include="FunctionDefinition.cs" />
+    <Compile Include="Expressions\ExpressionCache.cs" />
+    <Compile Include="Expressions\BinaryExpression.cs" />
+    <Compile Include="Expressions\BindingExpression.cs" />
+    <Compile Include="Expressions\BindingInfo.cs" />
+    <Compile Include="Expressions\Expression.cs" />
+    <Compile Include="Expressions\FunctionExpression.cs" />
+    <Compile Include="Expressions\IValueObject.cs" />
+    <Compile Include="Expressions\TokenType.cs" />
+    <Compile Include="Expressions\Token.cs" />
+    <Compile Include="Expressions\UnaryExpression.cs" />
+    <Compile Include="Expressions\VariableExpression.cs" />
+    <Compile Include="Expressions\XObjectExpression.cs" />
+    <Compile Include="Functions\CalcEngineFunction.cs" />
+    <Compile Include="Functions\FunctionDefinition.cs" />
     <Compile Include="Functions\Logical.cs" />
     <Compile Include="Functions\MathTrig.cs" />
     <Compile Include="Functions\Statistical.cs" />
@@ -61,11 +72,9 @@
     <Compile Include="Functions\Text.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo_common_portable.cs" />
-    <Compile Include="Tester.cs" />
-    <Compile Include="Token.cs" />
+    <Compile Include="Expressions\TokenId.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CPOL.htm" />
     <None Include="Zirpl.CalcEngine.Portable.nuspec" />
   </ItemGroup>
   <ItemGroup>

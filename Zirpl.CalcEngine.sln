@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{405336
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zirpl.CalcEngine.Portable", "Zirpl.CalcEngine.Portable\Zirpl.CalcEngine.Portable.csproj", "{96F8314F-4599-490D-B18E-D05D32B13842}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zirpl.CalcEngine.Portable.Tests", "Zirpl.CalcEngine.Portable.Tests\Zirpl.CalcEngine.Portable.Tests.csproj", "{C1C81EC6-8368-4282-8475-BB36E8DD222F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,12 +41,22 @@ Global
 		{96F8314F-4599-490D-B18E-D05D32B13842}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{96F8314F-4599-490D-B18E-D05D32B13842}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{96F8314F-4599-490D-B18E-D05D32B13842}.Release|x86.ActiveCfg = Release|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal

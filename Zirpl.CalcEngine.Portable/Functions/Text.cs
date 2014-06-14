@@ -38,45 +38,6 @@ namespace Zirpl.CalcEngine
             ce.RegisterFunction("UPPER", 1, Upper); // Converts text to uppercase
             ce.RegisterFunction("VALUE", 1, Value); // Converts a text argument to a number
         }
-#if DEBUG
-        public static void Test(CalculationEngine ce)
-        {
-            ce.Test("CHAR(65)", "A");
-            ce.Test("CODE(\"A\")", 65);
-            ce.Test("CONCATENATE(\"a\", \"b\")", "ab");
-            ce.Test("FIND(\"bra\", \"abracadabra\")", 2);
-            ce.Test("FIND(\"BRA\", \"abracadabra\")", -1);
-            ce.Test("LEFT(\"abracadabra\", 3)", "abr");
-            ce.Test("LEFT(\"abracadabra\")", "a");
-            ce.Test("LEN(\"abracadabra\")", 11);
-            ce.Test("LOWER(\"ABRACADABRA\")", "abracadabra");
-            ce.Test("MID(\"abracadabra\", 1, 3)", "abr");
-            ce.Test("PROPER(\"abracadabra\")", "Abracadabra");
-            ce.Test("REPLACE(\"abracadabra\", 1, 3, \"XYZ\")", "XYZacadabra");
-            ce.Test("REPT(\"abr\", 3)", "abrabrabr");
-            ce.Test("RIGHT(\"abracadabra\", 3)", "bra");
-            ce.Test("SEARCH(\"bra\", \"abracadabra\")", 2);
-            ce.Test("SEARCH(\"BRA\", \"abracadabra\")", 2);
-            ce.Test("SUBSTITUTE(\"abracadabra\", \"a\", \"b\")", "bbrbcbdbbrb");
-            ce.Test("T(123)", "123");
-            ce.Test("TEXT(1234, \"n2\")", "1,234.00");
-            ce.Test("TRIM(\"   hello   \")", "hello");
-            ce.Test("UPPER(\"abracadabra\")", "ABRACADABRA");
-            ce.Test("VALUE(\"1234\")", 1234.0);
-
-            ce.Test("SUBSTITUTE(\"abcabcabc\", \"a\", \"b\")", "bbcbbcbbc");
-            ce.Test("SUBSTITUTE(\"abcabcabc\", \"a\", \"b\", 1)", "bbcabcabc");
-            ce.Test("SUBSTITUTE(\"abcabcabc\", \"a\", \"b\", 2)", "abcbbcabc");
-            ce.Test("SUBSTITUTE(\"abcabcabc\", \"A\", \"b\", 2)", "abcabcabc"); // case-sensitive!
-
-
-            // test taken from http://www.codeproject.com/KB/vb/FormulaEngine.aspx
-            var a1 = "\"http://j-walk.com/ss/books\"";
-            var exp = "RIGHT(A1,LEN(A1)-FIND(CHAR(1),SUBSTITUTE(A1,\"/\",CHAR(1),LEN(A1)-LEN(SUBSTITUTE(A1,\"/\",\"\")))))";
-            ce.Test(exp.Replace("A1", a1), "books");
-
-        }
-#endif
         static object _Char(List<Expression> p)
         {
             var c = (char)(int)p[0];
