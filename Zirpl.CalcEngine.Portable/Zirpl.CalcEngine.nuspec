@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Zirpl.CalcEngine</id>
+    <version>$version$</version>
+    <title>ZCalcEngine</title>
+    <authors>Zirpl Software</authors>
+    <owners>Zirpl Software</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A port of Calc Engine at http://www.codeproject.com/KB/recipes/CalcEngine.aspx to a Portable .Net assembly.</description>
+    <language>en-US</language>
+    <copyright>Copyright 2014</copyright>
+    <tags></tags>
+    <projectUrl>https://github.com/nlafratta/ZCalcEngine</projectUrl>
+    <licenseUrl>https://github.com/nlafratta/ZCalcEngine/blob/master/LICENSE</licenseUrl>
+    <releaseNotes>
+      <![CDATA[
+            For full release notes see https://github.com/nlafratta/ZCalcEngine/blob/master/releasenotes.md
+            ]]>
+    </releaseNotes>
+  </metadata>
+</package>

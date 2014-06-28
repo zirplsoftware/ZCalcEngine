@@ -7,7 +7,7 @@
     <FileVersion>$(ASSEMBLYFILEVERSION)</FileVersion>
     <InformationalVersion>$(ASSEMBLYINFORMATIONALVERSION)</InformationalVersion>
     <Company>Zirpl Software, LLC</Company>
-    <Copyright>Copyright © Zirpl Software 2013</Copyright>
+    <Copyright>Copyright © Zirpl Software 2014</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
