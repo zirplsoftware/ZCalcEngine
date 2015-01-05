@@ -11,13 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{32D323
 		.nuget\Zirpl.CalcEngine.nuspec = .nuget\Zirpl.CalcEngine.nuspec
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{405336FF-619D-4AB3-B25D-EEBE035407B9}"
-	ProjectSection(SolutionItems) = preProject
-		.build\FixAssemblyVersions.proj = .build\FixAssemblyVersions.proj
-		.build\MSBuild.Community.Tasks.dll = .build\MSBuild.Community.Tasks.dll
-		.build\MSBuild.Community.Tasks.targets = .build\MSBuild.Community.Tasks.targets
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zirpl.CalcEngine.Portable", "Zirpl.CalcEngine.Portable\Zirpl.CalcEngine.Portable.csproj", "{96F8314F-4599-490D-B18E-D05D32B13842}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zirpl.CalcEngine.Portable.Tests", "Zirpl.CalcEngine.Portable.Tests\Zirpl.CalcEngine.Portable.Tests.csproj", "{C1C81EC6-8368-4282-8475-BB36E8DD222F}"
@@ -28,8 +21,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{91
 		README.md = README.md
 		releasenotes.md = releasenotes.md
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B9C67A67-1A84-42A3-BE26-38CD4772B836}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,9 +55,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C1C81EC6-8368-4282-8475-BB36E8DD222F} = {B9C67A67-1A84-42A3-BE26-38CD4772B836}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
