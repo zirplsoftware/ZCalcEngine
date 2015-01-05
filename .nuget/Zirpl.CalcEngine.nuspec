@@ -3,7 +3,7 @@
   <metadata>
     <id>Zirpl.CalcEngine</id>
     <version>$version$</version>
-    <title>ZCalcEngine</title>
+    <title>Zirpl CalcEngine</title>
     <authors>Zirpl Software</authors>
     <owners>Zirpl Software</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -19,4 +19,8 @@
             ]]>
     </releaseNotes>
   </metadata>
+  <files>
+    <file src="..\Zirpl.CalcEngine.Portable\bin\$configuration$\Zirpl.CalcEngine.Portable.dll" target="lib\portable-net45+sl5+win8+wpa81+wp8\" />
+    <file src="..\Zirpl.CalcEngine.Portable\bin\$configuration$\Zirpl.CalcEngine.Portable.XML" target="lib\portable-net45+sl5+win8+wpa81+wp8\" />
+  </files>
 </package>
