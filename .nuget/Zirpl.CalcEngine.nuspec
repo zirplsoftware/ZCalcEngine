@@ -11,11 +11,11 @@
     <language>en-US</language>
     <copyright>Copyright 2014</copyright>
     <tags></tags>
-    <projectUrl>https://github.com/nlafratta/ZCalcEngine</projectUrl>
-    <licenseUrl>https://github.com/nlafratta/ZCalcEngine/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/zirplsoftware/ZCalcEngine</projectUrl>
+    <licenseUrl>https://github.com/zirplsoftware/ZCalcEngine/blob/master/LICENSE</licenseUrl>
     <releaseNotes>
       <![CDATA[
-            For full release notes see https://github.com/nlafratta/ZCalcEngine/blob/master/releasenotes.md
+            For full release notes see https://github.com/zirplsoftware/ZCalcEngine/blob/master/releasenotes.md
             ]]>
     </releaseNotes>
   </metadata>
