@@ -20,7 +20,7 @@
     </releaseNotes>
   </metadata>
   <files>
-    <file src="..\Zirpl.CalcEngine.Portable\bin\$configuration$\Zirpl.CalcEngine.Portable.dll" target="lib\portable-net45+sl5+win8+wpa81+wp8\" />
-    <file src="..\Zirpl.CalcEngine.Portable\bin\$configuration$\Zirpl.CalcEngine.Portable.XML" target="lib\portable-net45+sl5+win8+wpa81+wp8\" />
+    <file src="..\Zirpl.CalcEngine.Portable\bin\$configuration$\Zirpl.CalcEngine.Portable.dll" target="lib\portable-windows8+net40+wp8+sl5+wpa81\" />
+    <file src="..\Zirpl.CalcEngine.Portable\bin\$configuration$\Zirpl.CalcEngine.Portable.XML" target="lib\portable-windows8+net40+wp8+sl5+wpa81\" />
   </files>
 </package>
