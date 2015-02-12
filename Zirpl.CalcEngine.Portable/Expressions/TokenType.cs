@@ -10,12 +10,13 @@ namespace Zirpl.CalcEngine
     /// </summary>
     internal enum TokenType
     {
-        COMPARE,	// < > = <= >=
-        ADDSUB,		// + -
-        MULDIV,		// * /
-        POWER,		// ^
-        GROUP,		// ( ) , .
-        LITERAL,	// 123.32, "Hello", etc.
+        LOGICAL , // &&,||
+        COMPARE , // < > = <= >= ==
+        ADDSUB  , // + -
+        MULDIV  , // * /
+        POWER   , // ^
+        GROUP   , // ( )         , .
+        LITERAL , // 123.32      , "Hello" , etc.
         IDENTIFIER  // functions, external objects, bindings
     }
 }

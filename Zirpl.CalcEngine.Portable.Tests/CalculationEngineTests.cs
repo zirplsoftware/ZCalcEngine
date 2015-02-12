@@ -52,7 +52,29 @@ namespace Zirpl.CalcEngine.Portable.Tests
 
             // test functions
 
+
+            // COMPARE TESTS
+            engine.Test("5=5"   , true);
+            engine.Test("5==5"  , true);
+            engine.Test("6==5"  , false);
+            engine.Test("6=5"   , false);
+            engine.Test("6<5"   , false);
+            engine.Test("6>5"   , true);
+            engine.Test("5<=10" , true);
+            engine.Test("5>=3"  , true);
+
             // LOGICAL FUNCTION TESTS
+
+            engine.Test("5<=6.0 && 6>=3"  , true);
+            engine.Test("true  && true"   , true);
+            engine.Test("true  && false"  , false);
+            engine.Test("false && true"   , false);
+            engine.Test("false && false"  , false);
+            engine.Test("true  || true"   , true);
+            engine.Test("true  || false"  , true);
+            engine.Test("false || true"   , true);
+            engine.Test("false || false"  , false);
+
             engine.Test("AND(true, true)", true);
             engine.Test("AND(true, false)", false);
             engine.Test("AND(false, true)", false);

@@ -177,7 +177,8 @@ namespace Zirpl.CalcEngine
             // make sure types are the same
             if (c1.GetType() != c2.GetType())
             {
-                c2 = Convert.ChangeType(c2, c1.GetType(), null) as IComparable;
+                c1 = Convert.ChangeType(c1, typeof(string),null) as IComparable;
+                c2 = Convert.ChangeType(c2, typeof(string),null) as IComparable;
             }
 
             // compare
