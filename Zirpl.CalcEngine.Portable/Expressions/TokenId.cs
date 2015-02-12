@@ -10,6 +10,7 @@ namespace Zirpl.CalcEngine
     /// </summary>
     internal enum TokenId
     {
+        AND, OR, // LOGICAL
         GT, LT, GE, LE, EQ, NE, // COMPARE
         ADD, SUB, // ADDSUB
         MUL, DIV, DIVINT, MOD, // MULDIV

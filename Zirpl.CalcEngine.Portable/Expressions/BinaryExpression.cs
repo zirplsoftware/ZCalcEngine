@@ -43,6 +43,10 @@ namespace Zirpl.CalcEngine
             // handle everything else
             switch (_token.ID)
             {
+                case TokenId.AND:
+                    return (bool)_lft && (bool)_rgt;
+                case TokenId.OR:
+                    return (bool)_lft || (bool)_rgt;
                 case TokenId.ADD:
                     return (double)_lft + (double)_rgt;
                 case TokenId.SUB:
