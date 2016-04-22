@@ -83,7 +83,7 @@ namespace Zirpl.CalcEngine
 			// check for errors
 			if (_token.ID != TokenId.END)
 			{
-                Throw();
+                Throw(GetCurrentTokenError());
 			}
 
             // optimize expression
@@ -95,7 +95,8 @@ namespace Zirpl.CalcEngine
             // done
 			return expr;
 		}
-        /// <summary>
+		
+	    /// <summary>
         /// Evaluates a string.
         /// </summary>
         /// <param name="expression">Expression to evaluate.</param>
@@ -512,7 +513,7 @@ namespace Zirpl.CalcEngine
             // make sure we got something...
             if (x == null)
             {
-                Throw();
+                Throw(GetCurrentTokenError());
             }
 
 			// done
@@ -682,20 +683,26 @@ namespace Zirpl.CalcEngine
 			}
 
 			// parse strings
-			if (c == '\"')
-			{
+	        var stringTokenArray = new List<char>
+	        {
+		        '\"', '\''
+	        };
+
+	        if (stringTokenArray.Contains(c))
+	        {
+		        var token = c;
 				// look for end quote, skip double quotes
 				for (i = 1; i + _ptr < _len; i++)
 				{
 					c = _expr[_ptr + i];
-					if (c != '\"') continue;
+					if (c != token) continue;
 					char cNext = i + _ptr < _len - 1 ? _expr[_ptr + i + 1]: ' ';
-					if (cNext != '\"') break;
+					if (cNext != token) break;
 					i++;
 				}
 
 				// check that we got the end of the string
-				if (c != '\"')
+				if (c != token)
 				{
 					Throw("Can't find final quote.");
 				}
@@ -703,7 +710,7 @@ namespace Zirpl.CalcEngine
 				// end of string
 				var lit = _expr.Substring(_ptr + 1, i - 1);
 				_ptr += i + 1;
-                _token = new Token(lit.Replace("\"\"", "\""), TokenId.ATOM, TokenType.LITERAL);
+                _token = new Token(lit.Replace(token.ToString(), "\""), TokenId.ATOM, TokenType.LITERAL);
 				return;
 			}
 
@@ -753,7 +760,13 @@ namespace Zirpl.CalcEngine
             _ptr += i;
             _token = new Token(id, TokenId.ATOM, TokenType.IDENTIFIER);
 		}
-        static double ParseDouble(string str, CultureInfo ci)
+
+		private string GetCurrentTokenError()
+		{
+			return _expr.Substring(0, _ptr - 1) + "[" + _token.Value + "]" + _expr.Substring(_ptr);
+		}
+
+		static double ParseDouble(string str, CultureInfo ci)
         {
             if (str.Length > 0 && str[str.Length - 1] == ci.NumberFormat.PercentSymbol[0])
             {
@@ -798,7 +811,7 @@ namespace Zirpl.CalcEngine
 			// make sure the list was closed correctly
 			if (_token.ID != TokenId.CLOSE)
 			{
-                Throw();
+                Throw(GetCurrentTokenError());
 			}
 
 			// done

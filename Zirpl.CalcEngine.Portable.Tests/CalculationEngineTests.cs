@@ -20,7 +20,7 @@ namespace Zirpl.CalcEngine.Portable.Tests
             var cultureInfo = engine.CultureInfo;
             engine.CultureInfo = System.Globalization.CultureInfo.InvariantCulture;
 
-            // test internal operators
+	        // test internal operators
             engine.Test("0", 0.0);
             engine.Test("+1", 1.0);
             engine.Test("-1", -1.0);
@@ -41,13 +41,17 @@ namespace Zirpl.CalcEngine.Portable.Tests
             // test DataContext
             var dc = engine.DataContext;
             var p = TestPerson.CreateTestPerson();
-            engine.DataContext = p;
+			p.Parent = TestPerson.CreateTestPerson();
+			engine.DataContext = p;
             engine.Test("Name", "Test Person");
-            engine.Test("Name.Length * 2", p.Name.Length * 2);
+			engine.Test("Parent.Name", "Test Person");
+			engine.Test("Name.Length * 2", p.Name.Length * 2);
             engine.Test("Children.Count", p.Children.Count);
             engine.Test("Children(2).Name", p.Children[2].Name);
             engine.Test("ChildrenDct(\"Test Child 2\").Name", p.ChildrenDct["Test Child 2"].Name);
-            engine.Test("ChildrenDct.Count", p.ChildrenDct.Count);
+			engine.Test("ChildrenDct('Test Child 2').Name", p.ChildrenDct["Test Child 2"].Name);
+			engine.Test("ChildrenIdDct('16C5888C-6C75-43DD-A372-2A3398DAE038').Name", p.ChildrenDct["Test Child 1"].Name);
+			engine.Test("ChildrenDct.Count", p.ChildrenDct.Count);
             engine.DataContext = dc;
 
             // test functions
@@ -142,7 +146,8 @@ namespace Zirpl.CalcEngine.Portable.Tests
             engine.Test("CHAR(65)", "A");
             engine.Test("CODE(\"A\")", 65);
             engine.Test("CONCATENATE(\"a\", \"b\")", "ab");
-            engine.Test("FIND(\"bra\", \"abracadabra\")", 2);
+			engine.Test("CONCATENATE('a', 'b')", "ab");
+			engine.Test("FIND(\"bra\", \"abracadabra\")", 2);
             engine.Test("FIND(\"BRA\", \"abracadabra\")", -1);
             engine.Test("LEFT(\"abracadabra\", 3)", "abr");
             engine.Test("LEFT(\"abracadabra\")", "a");
