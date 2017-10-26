@@ -870,5 +870,4 @@ namespace Zirpl.CalcEngine
 
         #endregion
 	}
-
 }

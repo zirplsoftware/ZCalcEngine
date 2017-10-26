@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{32D3234E-0C52-4833-A019-354D2391F548}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{32D323
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zirpl.CalcEngine.Portable", "Zirpl.CalcEngine.Portable\Zirpl.CalcEngine.Portable.csproj", "{96F8314F-4599-490D-B18E-D05D32B13842}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zirpl.CalcEngine.Portable.Tests", "Zirpl.CalcEngine.Portable.Tests\Zirpl.CalcEngine.Portable.Tests.csproj", "{C1C81EC6-8368-4282-8475-BB36E8DD222F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zirpl.CalcEngine.Tests", "Zirpl.CalcEngine.Portable.Tests\Zirpl.CalcEngine.Tests.csproj", "{C1C81EC6-8368-4282-8475-BB36E8DD222F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{91B683C2-FDBE-4381-BAE7-5294E1F57D1A}"
 	ProjectSection(SolutionItems) = preProject
@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{91
 		README.md = README.md
 		releasenotes.md = releasenotes.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zirpl.CalcEngine", "Zirpl.CalcEngine\Zirpl.CalcEngine.csproj", "{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,18 @@ Global
 		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C1C81EC6-8368-4282-8475-BB36E8DD222F}.Release|x86.ActiveCfg = Release|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Debug|x86.Build.0 = Debug|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Release|x86.ActiveCfg = Release|Any CPU
+		{B450AAE5-01AB-4F56-9FEA-EDFAA8DF3EB3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

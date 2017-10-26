@@ -33,9 +33,14 @@ namespace Zirpl.CalcEngine.Portable.Tests
 
             // test simple variables
             engine.Variables.Add("one", 1);
-            engine.Variables.Add("two", 2);
+			engine.Variables.Add("x", 1);
+			engine.Variables.Add("x2", "1");
+			engine.Variables.Add("two", 2);
             engine.Test("one + two", 3);
-            engine.Test("(two + two)^2", 16);
+			engine.Test("x2='1'", true);
+
+			engine.Test("2*x+1", 3);
+			engine.Test("(two + two)^2", 16);
             engine.Variables.Clear();
 
             // test DataContext
@@ -43,7 +48,9 @@ namespace Zirpl.CalcEngine.Portable.Tests
             var p = TestPerson.CreateTestPerson();
 			p.Parent = TestPerson.CreateTestPerson();
 			engine.DataContext = p;
-            engine.Test("Name", "Test Person");
+			engine.Test("Name", "Test Person");
+	        engine.Functions.Remove("CODE");
+			Assert.IsTrue(engine.Validate<bool>("Code='Code'"));
 			engine.Test("Parent.Name", "Test Person");
 			engine.Test("Name.Length * 2", p.Name.Length * 2);
             engine.Test("Children.Count", p.Children.Count);
@@ -59,7 +66,8 @@ namespace Zirpl.CalcEngine.Portable.Tests
 
             // COMPARE TESTS
             engine.Test("5=5"   , true);
-            engine.Test("5==5"  , true);
+			engine.Test("'2'='2'", true);
+			engine.Test("5==5"  , true);
             engine.Test("6==5"  , false);
             engine.Test("6=5"   , false);
             engine.Test("6<5"   , false);
@@ -144,7 +152,7 @@ namespace Zirpl.CalcEngine.Portable.Tests
 
             // TEXT FUNCTION TESTS
             engine.Test("CHAR(65)", "A");
-            engine.Test("CODE(\"A\")", 65);
+            //engine.Test("CODE(\"A\")", 65);
             engine.Test("CONCATENATE(\"a\", \"b\")", "ab");
 			engine.Test("CONCATENATE('a', 'b')", "ab");
 			engine.Test("FIND(\"bra\", \"abracadabra\")", 2);
@@ -188,5 +196,54 @@ namespace Zirpl.CalcEngine.Portable.Tests
             // restore culture
             engine.CultureInfo = cultureInfo;
         }
-    }
+
+	    [Test]
+	    public void Parse()
+	    {
+            CalculationEngine engine = new CalculationEngine();
+			
+			// test DataContext
+			var dc = engine.DataContext;
+			var p = TestPerson.CreateTestPerson();
+			engine.DataContext = p;
+
+		    var expression = engine.Parse("Parent.Children(2).Address");
+			var expression1 = engine.Parse("Parent.ChildrenDct('Test Child 58').Address");
+			
+			//expression.Validate();
+			//expression1.Validate();
+
+			p.Parent = TestPerson.CreateTestPerson();
+			p.Parent.Address = new Address() { Street = "sdf" };
+			expression1.Evaluate();
+	    }
+
+		[Test]
+		public void Units()
+		{
+			CalculationEngine engine = new CalculationEngine();
+
+			var p =	new UnitModel
+			{
+				This = TestPerson.CreateTestPerson()
+			};
+
+			engine.DataContext = p;
+
+			var expression = engine.Parse("This.Age*Y*5.0000");
+			
+			Console.WriteLine(expression.Evaluate());
+		}
+	}
+
+	public class UnitModel
+	{
+		public object This { get; set; }
+
+		public double M => 1;
+		public double S => M/60;
+		public double H => M*60;
+		public double D => M * 24;
+		public double Y => D * 365;
+	}
 }
